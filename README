@@ -1,0 +1,12 @@
+I would like to set up a set of exercises that flexes more of a language than 
+"Hello World", but isn't so specific as Project Euler. Exercises aren't 100%
+the same between languages, but the idea behind each exercise should be
+present in each file. 
+
+I'll keep adding new exercises and languages as I have time. Current languages
+are Java and Python. Current exercises are generating primes, and ____.
+
+Completion:
+Lang   Exercises Completed
+Java   .
+Python .
