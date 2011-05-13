@@ -4,20 +4,25 @@ the same between languages, but the idea behind each exercise should be
 present in each file. 
 
 I'll keep adding new exercises and languages as I have time. Current languages
-are Java and Python. Current exercises are generating primes, and dropbox 
-calories.
+are Java and Python. Current exercises are generating primes, dropbox 
+calories, trees, hello web, and soon random data structures.
 
 Completion:
 Lang   Exercises Completed
 Java   .
-Python ..
+Python ..,
+C#     .i
 
+. = Fully Completed
+, = Partially Completed(multiple items in exercise)
+i = In Progress (current exercise)
 
 Exercise Descriptions
 Generating Primes
 Generate primes between a lower and upper bound, expected to handle
 flipped lower and upper bounds, invalid ranges, and lower ranges 
 that are above the lowest possible prime number.
+
 
 Dropbox Calories
 From www.dropbox.com/jobs/challenges
@@ -41,3 +46,16 @@ there are multiple solutions, your program can output any one of them.
 Solutions should be non-trivial, so don't send us cat > /dev/null, you 
 smart aleck.
 
+
+Trees
+I implement a trie tree, and soon B+ trees.
+
+
+Hello Web
+Each language needs 3 pages, one that will say hello back to you, another that will output 
+a table based on a text file, and a user login/welcome page/register page.
+
+
+Random Data Structures
+Implementations of standard randomized data structures, I implement a Bloom
+Filter and a Treap.
