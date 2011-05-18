@@ -11,14 +11,8 @@
 namespace web {
 	
 	
-	public partial class Default {
+	public partial class oiu {
 		
-		protected System.Web.UI.HtmlControls.HtmlForm form1;
-		
-		protected System.Web.UI.WebControls.Label header;
-		
-		protected System.Web.UI.WebControls.TextBox test;
-		
-		protected System.Web.UI.WebControls.Button button1;
+		protected System.Web.UI.HtmlControls.HtmlTable SuperTable;
 	}
 }

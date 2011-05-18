@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace csactivity
 {
@@ -10,8 +11,8 @@ namespace csactivity
 		int worth;
 		
 		public Activity(string def){
-			name = def.Split(' ',1)[0];	
-			worth = new Parse(def.Split(' ',1)[1]);
+			name = def.Split(' ')[0];
+			worth = System.Convert.ToInt32(def.Split(' ')[1]);
 		}
 		public int get_value(){
 			return worth;
@@ -20,75 +21,69 @@ namespace csactivity
 			return name;	
 		}
 	}
-	class MainClass
-	{
-		var dict = new Dictionary<int,string> ();
-		ArrayList positive = new ArrayList<Activity> ();
-		ArrayList negative = new ArrayList<Activity> ();
-		public bool check(int level){
-			if (level <= this.positive.Count) {
-				foreach (string s in recurse_select(level, true)) {
-					
-				}
-			}
-			if (level <= this.negative.Count) {
-				foreach (string s in recurse_select(level, true)) {
-					
+	
+	class SearchSystem {
+		List<Activity> positive = new List<Activity> ();
+		List<Activity> negative = new List<Activity> ();
+		Dictionary<int, string> solutions = new Dictionary<int, string> ();
+		
+		public SearchSystem(string inFile){
+			using(StreamReader sr = new StreamReader(inFile)){
+				for (int i = 0; i < System.Convert.ToInt32(sr.ReadLine()); i++) {
+					Activity a = new Activity(sr.ReadLine());
+					if (a.get_value() > 0){
+						positive.Add(a);
+					}
+					else {
+						negative.Add(a);
+					}
 				}
 			}
 		}
 		
-		public ArrayList<string> recurse_select(int item_number, bool isPositive) {
-			
-		}
-		public ArrayList<string> do_recurse_select(int start_number, int level, bool isPositive) {
-			ArrayList output = new ArrayList<string> ();
-			var array = this.negative;
-			if (isPositive){
-				array = this.positive;
-			}
-			
-			if (level == 1){
-				for (int i=start_number; i<array.Count;i++){
-					output.Add(array[i].get_value
-				}
-			}
-				     
-			else {
-			}
-		}
-		public static void Main (string[] args)
-		{
-			if (args.GetLength() > 0){
-				using (TextReader fs = File.OpenRead(args[0])){
-					int items = Parse(fs.ReadLine());
-					for (int i=0;i<items;i++){
-						Activity a = new Activity(fs.ReadLine());
-						if (a.get_value() > 0){
-							positive.Add(a);
-						}
-						else {
-							negative.Add(a);
-						}	
-					}
-				}
+		
+		public void search(){
+			int level = 1;
+			while ((level <= positive.Count) && (level <= negative.Count)) {
 				
-				int level = 0;
-				if (this.negative.Count <= this.positive.Count){
-					level = this.postive.Count;
-				}
-				else {
-					level = this.negative.Count;
-				}
-				
-				for (int i=0; i<level; i++){
-					if (this.check(i)){
-						break;
-					}
+				if (level <= positive.Count){
+					
+					
 					
 				}
+				
+				if (level <= negative.Count){}
+				
+				
+				level++;
+			}
+		}
+		
+		public List<string> get_combinations(int combo_size, List<Activity> source) {
+			List<string> output = new List<string> ();
+			for (int i = 0; i <= source.Count - combo_size; i++){
+				
+				
+			}
+		}
+		
+		public int score_combination(string combo, List<Activity> source){
+			int sum = 0;
+			foreach(string act_id in combo.Split(',')){
+				sum += source[System.Convert.ToInt32(act_id)].get_value();	
+			}
+		}
+	}
+	class MainClass
+	{
+		
+		public static void Main (string[] args)
+		{
+			if (args.Length > 0){
+				var s = new SearchSystem(args[0]);
+				
+				s.search();
 			}
 		}
 	}
 }
-
